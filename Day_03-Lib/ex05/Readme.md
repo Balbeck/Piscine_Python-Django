@@ -1,5 +1,7 @@
 # Create Venv + Install dependencies + Launch Server
-`source my_script.sh`
+```bash
+source my_script.sh
+```
 
 # Create Project
 `django-admin startproject Hello_World`
@@ -8,4 +10,6 @@
 `python manage.py startapp helloworld`
 
 # Launch Server
-`python manage.py runserver`
+```python
+python manage.py runserver
+```
