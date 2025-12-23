@@ -1,10 +1,13 @@
 #!/bin/bash
+
+# Create and activate Venv
 python3 -m venv django_venv
 source django_venv/bin/activate
 
+# Install dependencies
 pip install --upgrade pip
 pip install -r requirement.txt
 
-# To have active virtual env after script ends
-# Launch the script with
-# source my_script.sh
+# Launch the Django server
+cd Hello_World
+python manage.py runserver

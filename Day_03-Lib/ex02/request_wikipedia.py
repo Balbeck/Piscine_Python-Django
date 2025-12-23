@@ -13,6 +13,7 @@ def write_on_file(filename, content):
     filename = filename.replace(" ", "_") + ".wiki"
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(content)
+        f.close()
 
 
 def get_wiki_response():
