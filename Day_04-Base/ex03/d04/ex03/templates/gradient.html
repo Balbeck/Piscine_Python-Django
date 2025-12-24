@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03 : Color Gradients</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 15px;
+            font-size: 14px;
+        }
+        td {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ex03 : Color Gradients</h1>
+    
+    <table>
+        <tr>
+            {% for header in headers %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+        
+        {% for row in rows %}
+            <tr>
+                {% for color in row %}
+                    <td style="background-color: {{ color }};"></td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
