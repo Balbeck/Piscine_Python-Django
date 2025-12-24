@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Ex01 : Processus d'affichage d'une page statique.</title>
+{% endblock %}
+
+{% block content %}
+<h1>Ex01 : Processus d'affichage d'une page statique.</h1>
+
+<h2>1. Requête HTTP</h2>
+<p>
+    L'utilisateur entre une URL dans son navigateur (par exemple : 
+    <code>http://127.0.0.1:8000/ex01/django/</code>). Le navigateur envoie une 
+    <strong>requête HTTP GET</strong> au serveur Django.
+</p>
+
+<h2>2. Routage des URLs (urls.py)</h2>
+<p>
+    Django reçoit la requête et consulte le fichier <code>urls.py</code> principal du projet. 
+    Il cherche un pattern d'URL correspondant à <code>/ex01/django/</code>.
+</p>
+<pre>{% verbatim %}
+# d04/urls.py
+path('ex01/', include('ex01.urls'))
+
+# ex01/urls.py
+path('django/', views.django_view, name='django')
+{% endverbatim %}</pre>
+
+<h2>3. Exécution de la vue (views.py)</h2>
+<p>
+    Django appelle la fonction <code>django_view(request)</code> définie dans 
+    <code>views.py</code>. Cette fonction contient la logique métier.
+</p>
+<pre>
+def django_view(request):
+    return render(request, 'ex01/django.html')
+</pre>
+
+<h2>4. Chargement du template</h2>
+<p>
+    La fonction <code>render()</code> charge le fichier template 
+    <code>ex01/templates/ex01/django.html</code>. Django parcourt tous les dossiers 
+    <code>templates/</code> des applications installées dans <code>INSTALLED_APPS</code>.
+</p>
+
+<h2>5. Rendu du template</h2>
+<p>
+    Django interprète le template HTML, remplace les variables du contexte 
+    (si présentes), exécute les tags de template (<code>{% verbatim %}{% %}{% endverbatim %}</code>), et génère 
+    le HTML final.
+</p>
+
+<h2>6. Réponse HTTP</h2>
+<p>
+    Django envoie une <strong>réponse HTTP 200</strong> avec le contenu HTML généré 
+    au navigateur. Le navigateur affiche la page à l'utilisateur.
+</p>
+
+<h2>Schéma récapitulatif</h2>
+<pre>
+Navigateur → Requête HTTP
+           ↓
+       urls.py (routage)
+           ↓
+       views.py (logique)
+           ↓
+    Template HTML (rendu)
+           ↓
+       Réponse HTTP
+           ↓
+     Affichage dans le navigateur
+</pre>
+{% endblock %}

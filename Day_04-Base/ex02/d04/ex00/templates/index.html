@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titre }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>{{ titre }}</h1>
+    <p style="text-align: end;">{{ nom }}</p>
+    <h2>Headers</h2>
+    <pre>
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6 </pre>
+
+    <h2>Emphasis</h2>
+    <pre>
+*italic* or _italic_
+**bold** or __bold__
+***bold and italic***
+~~strikethrough~~ </pre>
+
+    <h2>Lists</h2>
+    <h3>Unordered</h3>
+    <pre>
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2 </pre>
+    <h3>Ordered</h3>
+    <pre>
+1. First item
+2. Second item
+3. Third item </pre>
+
+    <h2>Links</h2>
+    <pre>
+[Link text](https://example.com)
+[Link with title](https://example.com "Title") </pre>
+
+    <h2>Images</h2>
+    <pre>
+![Alt text](image.jpg)
+![Alt text](image.jpg "Image title") </pre>
+
+    <h2>Code</h2>
+    <h3>Inline code</h3>
+    <pre>`inline code`</pre>
+
+    <h3>Code blocks</h3>
+    <pre>
+```python
+def hello():
+    print("Hello, World!")
+``` </pre>
+
+    <h2>Blockquotes</h2>
+    <pre>
+> This is a blockquote.
+> It can span multiple lines. </pre>
+
+    <h2>Tables</h2>
+    <pre>
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
+| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
+    </pre>
+
+    <h2>Task Lists</h2>
+    <pre>
+- [x] Completed task
+- [ ] Incomplete task </pre>
+
+    <h2>Footnotes</h2>
+    <pre>
+Here's a sentence with a footnote[^1].
+[^1]: This is the footnote.</pre>
+
+    <h2>Escaping Characters</h2>
+    <pre>* Escaped asterisk # Escaped hash </pre>
+</body>
+</html>

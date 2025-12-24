@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block title %}
+    <title>Ex01</title>
+    {% endblock %}
+    
+    {% load static %}
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'ex01/css/style1.css' %}">
+    {% endblock %}
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+    
+    {% block content %}
+    <!-- Le contenu des pages sera inséré ici -->
+    {% endblock %}
+</body>
+</html>

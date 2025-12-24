@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Ex01 : Moteur de template.</title>
+{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'ex01/css/style2.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Ex01 : Moteur de template.</h1>
+
+<h2>Le moteur de templates Django</h2>
+<p>
+    Le moteur de templates Django permet de générer du HTML dynamiquement. 
+    Il sépare la présentation (HTML) de la logique métier (Python).
+</p>
+
+<h2>1. Les blocs ({% verbatim %}{% block %}{% endverbatim %})</h2>
+<p>
+    Les blocs permettent l'héritage de templates. Un template enfant peut 
+    redéfinir le contenu d'un bloc défini dans le template parent.
+</p>
+<pre>
+{% verbatim %}
+<!-- base.html -->
+<html>
+<head>
+    {% block title %}Titre par défaut{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+<!-- page.html -->
+{% extends 'base.html' %}
+{% block title %}Mon titre{% endblock %}
+{% block content %}<p>Mon contenu</p>{% endblock %}
+{% endverbatim %}
+</pre>
+
+<h2>2. Les boucles for...in</h2>
+<p>
+    Les boucles <code>{% verbatim %}{% for %}{% endverbatim %}</code> permettent d'itérer 
+    sur des listes, tuples, ou dictionnaires.
+</p>
+<pre>
+{% verbatim %}
+{% for item in items %}
+    <li>{{ item }}</li>
+{% endfor %}
+{% endverbatim %}
+</pre>
+<p><strong>Exemple avec les données du contexte :</strong></p>
+<ul>
+    {% for item in items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<h2>3. Les structures if</h2>
+<p>
+    Les conditions <code>{% verbatim %}{% if %}{% endverbatim %}</code> permettent d'afficher 
+    du contenu conditionnel.
+</p>
+<pre>
+{% verbatim %}
+{% if show_advanced %}
+    <p>Contenu avancé</p>
+{% else %}
+    <p>Contenu basique</p>
+{% endif %}
+{% endverbatim %}
+</pre>
+<p><strong>Résultat :</strong></p>
+{% if show_advanced %}
+<p style="background: #e7f3ff; padding: 10px; border-left: 4px solid #007bff;">
+    ✅ Le contenu avancé est affiché car <code>show_advanced = True</code>
+</p>
+{% else %}
+<p>Contenu basique</p>
+{% endif %}
+
+<h2>4. Affichage de variables (contexte)</h2>
+<p>
+    Les variables passées par le contexte (depuis la vue) sont affichées avec 
+    <code>{% verbatim %}{{ variable }}{% endverbatim %}</code>.
+</p>
+<pre>
+{% verbatim %}
+# views.py
+context = {'nom': 'Django', 'version': '6.0'}
+return render(request, 'page.html', context)
+
+# page.html
+<p>Framework: {{ nom }} {{ version }}</p>
+{% endverbatim %}
+</pre>
+{% endblock %}
