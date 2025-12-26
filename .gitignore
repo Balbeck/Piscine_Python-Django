@@ -1,5 +1,5 @@
 # Python
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 *.so
@@ -14,11 +14,11 @@ db.sqlite3-journal
 /media/
 
 # Virtual Environment
-django_venv/
-venv/
-env/
-ENV/
-.venv/
+**/django_venv/
+**/venv/
+**/env/
+**/ENV/
+**/.venv/
 
 # IDE
 .vscode/
