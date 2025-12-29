@@ -205,14 +205,12 @@ def update(request):
             episode_nb = request.POST.get('episode_nb')
             opening_crawl = request.POST.get('opening_crawl')
             
-            # Mettre à jour le opening_crawl
             update_query = f"""
             UPDATE {table_name}
             SET opening_crawl = %s
             WHERE episode_nb = %s;
             """
             
-            cursor = conn.cursor()
             cursor.execute(update_query, [opening_crawl, episode_nb])
             conn.commit()
 
