@@ -18,12 +18,13 @@
         }
       </style>
   </head>
+
   <body>
     <table>
       <tbody>
         <tr>
-          <th>title</th>
           <th>episode_nb</th>
+          <th>title</th>
           <th>opening_crawl</th>
           <th>director</th>
           <th>producer</th>
@@ -31,8 +32,8 @@
         </tr>
         {% for movie in movies %}
         <tr>
-          <td>{{ movie.title }}</td>
           <td>{{ movie.episode_nb }}</td>
+          <td>{{ movie.title }}</td>
           <td>{{ movie.opening_crawl }}</td>
           <td>{{ movie.director }}</td>
           <td>{{ movie.producer }}</td>
@@ -42,4 +43,5 @@
       </tbody>
     </table>
   </body>
+
 </html>
