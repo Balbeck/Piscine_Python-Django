@@ -10,26 +10,31 @@ class Intern:
             return "This is the worst coffee you ever tasted."
 
     def work(self):
-        raise Exception("I’m working on a task.")
+        raise Exception("I’m just an intern, I can’t do that...")
     
     def make_coffee(self) -> Coffee:
         return self.Coffee()
 
 
+
 def test():
-    intern = Intern()
-    print(intern)
-    mark = Intern("Mark")
-    print(mark)
+
     try :
+        intern = Intern()
+        print(intern)
+        mark = Intern("Mark")
+        print(mark)
         intern.work()
     except Exception as e:
         print(e)
+
     try :
         coffee = mark.make_coffee()
         print(coffee)
     except Exception as e:
         print(e)
+
+
 
 if __name__ == "__main__":
     test()

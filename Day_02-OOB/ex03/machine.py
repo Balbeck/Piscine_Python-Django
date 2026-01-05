@@ -41,9 +41,9 @@ def test():
         try:
             beverage_class = random.choice(beverages)
             beverage = machine.serve(beverage_class)
-            print(f'[ ✅ Served ] -->\n{beverage}')
+            print(f'[ {i} ]: [ ✅ Served ] -->\n{beverage}')
         except CoffeeMachine.BrokenMachineException as e:
-            print(f'[ 🚨 Broken ]: {e}')
+            print(f'[ {i} ]: [ 🚨 Broken ]: {e}')
             machine.repair()
 
 if __name__ == "__main__":

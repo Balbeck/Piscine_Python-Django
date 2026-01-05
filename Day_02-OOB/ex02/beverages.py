@@ -48,11 +48,13 @@ class Capuccino(HotBeverages):
 
 
 def test():
-    print(f'[ HotBeverages ]:\n{HotBeverages()}')
-    print(f'[ Coffee ]:\n{Coffee()}')
-    print(f'[ Tea ]:\n{Tea()}')
-    print(f'[ Chocolate ]:\n{Chocolate()}')
-    print(f'[ Capuccino ]:\n{Capuccino()}')
+    print(f'[ HotBeverages ]:\n{HotBeverages()}\n')
+    cofee = Coffee()
+    print(f'[ c*ffee ]:\n{cofee}\n')
+    print(f'[ Coffee ]:\n{Coffee()}\n')
+    print(f'[ Tea ]:\n{Tea()}\n')
+    print(f'[ Chocolate ]:\n{Chocolate()}\n')
+    print(f'[ Capuccino ]:\n{Capuccino()}\n')
 
 if __name__ == "__main__":
     test()

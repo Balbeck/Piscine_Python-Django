@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from elem import Elem, Text
 
 class Html(Elem):
@@ -97,11 +99,12 @@ class Br(Elem):
 
 
 def test():
-    print( Html( [Head(), Body()] ) )
-    print( Html( [Head(), Body([H1(Text('Titre 1')), P(Text('\"toto\"')), H1(Text('Titre 2'))])] ) )
+    print( Html( [Head(), Body()] ), '\n' )
+    print( Html( [Head(), Body([H1(Text('Titre 1')), P(Text('\"toto\"')), H1(Text('Titre 2'))])] ), '\n' )
     print( Html( [ Head(Title(Text('"Hello ground!"'))), 
                   Body( [ H1(Text('"Oh no, not again!"')), Img(attr={'src': 'http://i.imgur.com/pfp3T.jpg'}) ] ) 
-                ] ))
+                ] ), '\n'
+    )
     
         # Elem('html',
         # content=[
