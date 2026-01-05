@@ -109,7 +109,7 @@ def display(request):
             homeworld__climate__icontains=condition).order_by('name')
         
         if not people.exists():
-            comand_line = f'<br> \' http://localhost:8000/ex09/populate/ \'  First'
+            comand_line = f'<br> \' http://localhost:8000/ex10/populate/ \'  First'
             return HttpResponse('No data available, please use the following command line before use:{comand_line}'.format(comand_line=comand_line))
         
         characteristics = []

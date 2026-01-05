@@ -7,4 +7,3 @@
 ## Verif Migration
 `python manage.py showmigrations ex01`
 ->  Doit avoir [X] 0001_initial 
-    ( La croix [X] doit être présente )
